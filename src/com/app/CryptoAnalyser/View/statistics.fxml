@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.text.Text?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.app.CryptoAnalyser.controller.StatisticController"
+           styleClass="root"
+           style=" -fx-padding: 0;">
+
+    <VBox spacing="0" stylesheets="@/css/styleStatistique.css" style="-fx-padding: 0;" StackPane.alignment="TOP_CENTER">
+
+        <!-- TOP BAR -->
+        <HBox styleClass="top-bar-glass"
+              alignment="CENTER"
+              spacing="15"
+              prefHeight="70"
+              maxHeight="70"
+              minHeight="66"
+              style="-fx-padding: 0 20 0 20;"
+              VBox.vgrow="NEVER">
+            <Button text="← home" styleClass="back-btn-glass" onAction="#goBack"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="📊 ANALYSIS STATISTICS" styleClass="app-logo"/>
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <!-- REFRESH BUTTON -->
+            <Button text="🔄" styleClass="refresh-btn-glass" onAction="#refreshStatistics">
+                <tooltip>
+                    <Tooltip text="Refresh statistics"/>
+                </tooltip>
+            </Button>
+        </HBox>
+
+        <!-- MAIN CONTENT -->
+        <ScrollPane fx:id="statsContainer" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="scroll-pane"
+                    style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+
+            <VBox spacing="20" alignment="TOP_CENTER" style="-fx-padding: 20;">
+
+                <!-- STATS CARDS - COMPACT AND ADAPTABLE -->
+                <HBox spacing="15" alignment="CENTER" style="-fx-padding: 0 10;">
+
+                    <!-- CARD 1 -->
+                    <HBox styleClass="stat-card" spacing="12" alignment="CENTER_LEFT"
+                          prefWidth="200" maxWidth="260" prefHeight="100" HBox.hgrow="ALWAYS">
+                        <Text fx:id="iconTotal" styleClass="stat-icon"/>
+                        <VBox spacing="2" alignment="CENTER_LEFT">
+                            <Label fx:id="totalAnalysesLabel" text="0" styleClass="stat-number"/>
+                            <Label text="Total analyses" styleClass="stat-label"/>
+                        </VBox>
+                    </HBox>
+
+                    <!-- CARD 2 -->
+                    <HBox styleClass="stat-card" spacing="12" alignment="CENTER_LEFT"
+                          prefWidth="200" maxWidth="260" prefHeight="100" HBox.hgrow="ALWAYS">
+                        <Text fx:id="iconSuccess" styleClass="stat-icon"/>
+                        <VBox spacing="2" alignment="CENTER_LEFT">
+                            <Label fx:id="successRateLabel" text="0%" styleClass="stat-number"/>
+                            <Label text="Success rate" styleClass="stat-label"/>
+                        </VBox>
+                    </HBox>
+
+                    <!-- CARD 3 -->
+                    <HBox styleClass="stat-card" spacing="12" alignment="CENTER_LEFT"
+                          prefWidth="200" maxWidth="260" prefHeight="100" HBox.hgrow="ALWAYS">
+                        <Text fx:id="iconTop" styleClass="stat-icon"/>
+                        <VBox spacing="2" alignment="CENTER_LEFT">
+                            <Label fx:id="topAlgorithmLabel" text="-" styleClass="stat-number"/>
+                            <Label text="Top algorithm" styleClass="stat-label"/>
+                        </VBox>
+                    </HBox>
+
+                    <!-- CARD 4 -->
+                    <HBox styleClass="stat-card" spacing="12" alignment="CENTER_LEFT"
+                          prefWidth="200" maxWidth="260" prefHeight="100" HBox.hgrow="ALWAYS">
+                        <Text fx:id="iconPeriod" styleClass="stat-icon"/>
+                        <VBox spacing="2" alignment="CENTER_LEFT">
+                            <Label text="7d" styleClass="stat-number"/>
+                            <Label text="Analysis period" styleClass="stat-label"/>
+                        </VBox>
+                    </HBox>
+
+                </HBox>
+
+                <!-- CHART 1: Daily analyses -->
+                <VBox styleClass="chart-container" spacing="10" maxWidth="1000" HBox.hgrow="ALWAYS">
+                    <Label text="📅 DAILY ANALYSES" styleClass="chart-title"/>
+                    <BarChart fx:id="dailyChart" prefHeight="300" maxWidth="Infinity">
+                        <xAxis>
+                            <CategoryAxis label="Date" />
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis label="Number of analyses" />
+                        </yAxis>
+                    </BarChart>
+                </VBox>
+
+                <!-- TWO SIDE-BY-SIDE CHARTS -->
+                <HBox spacing="15" alignment="CENTER" maxWidth="1000">
+
+                    <!-- CHART 2 -->
+                    <VBox styleClass="chart-container wide-chart" spacing="10" HBox.hgrow="ALWAYS" prefWidth="400">
+                        <Label text="📈 CUMULATIVE EVOLUTION" styleClass="chart-title"/>
+                        <AreaChart fx:id="cumulativeChart" prefHeight="300" HBox.hgrow="ALWAYS">
+                            <xAxis>
+                                <CategoryAxis label="Date" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis label="Cumulative total" />
+                            </yAxis>
+                        </AreaChart>
+                    </VBox>
+
+                    <!-- CHART 3 -->
+                    <VBox styleClass="chart-container wide-chart" spacing="10" HBox.hgrow="ALWAYS" prefWidth="400">
+                        <Label text="🎯 ALGORITHM DISTRIBUTION" styleClass="chart-title"/>
+                        <PieChart fx:id="algorithmPieChart" prefHeight="300" HBox.hgrow="ALWAYS"/>
+                    </VBox>
+
+                </HBox>
+
+                <!-- RECENT ANALYSES TABLE -->
+                <VBox styleClass="table-container" spacing="10" maxWidth="1000" HBox.hgrow="ALWAYS">
+                    <Label text="📋 RECENT ANALYSES" styleClass="section-title"/>
+
+                    <HBox styleClass="table-header" spacing="0">
+                        <Label text="Date" styleClass="table-header-cell" prefWidth="120" minWidth="100"/>
+                        <Label text="Algorithm" styleClass="table-header-cell" prefWidth="150" minWidth="120"/>
+                        <!-- Text column takes remaining space (HBox.hgrow) -->
+                        <Label text="Original text" styleClass="table-header-cell" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                        <Label text="Status" styleClass="table-header-cell" prefWidth="100" minWidth="80"/>
+                        <Label text="Length" styleClass="table-header-cell" prefWidth="80" minWidth="60"/>
+                    </HBox>
+
+                    <!-- RECENT ANALYSES CONTAINER -->
+                    <VBox fx:id="recentAnalysesContainer" spacing="5" style="-fx-max-height: 200; -fx-padding: 5px;">
+                        <!-- Content will be added dynamically -->
+                    </VBox>
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+    </VBox>
+</StackPane>

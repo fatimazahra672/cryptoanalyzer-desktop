@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane
+        xmlns="http://javafx.com/javafx"
+        xmlns:fx="http://javafx.com/fxml"
+        fx:controller="com.app.CryptoAnalyser.controller.DecryptModalController"
+        prefWidth="250" prefHeight="250"
+        stylesheets="@/css/decrypt-modal.css"
+        styleClass="modal-root">
+
+    <StackPane fx:id="textContainer" styleClass="modal-card">
+        <ScrollPane fx:id="scrollPane" fitToWidth="true" vbarPolicy="AS_NEEDED" hbarPolicy="NEVER">
+            <TextFlow fx:id="textFlow" styleClass="textflow"/>
+        </ScrollPane>
+    </StackPane>
+
+    <!-- Progress container (caché par défaut) -->
+    <VBox fx:id="progressContainer" alignment="CENTER" spacing="10" visible="false" managed="false">
+        <Label fx:id="progressLabel" text="Decrypting in progress..." style="-fx-text-fill: white; -fx-font-size: 16px;"/>
+        <ProgressBar fx:id="progressBar" prefWidth="400" progress="0"/>
+    </VBox>
+
+    <!-- Container divisé (caché par défaut) -->
+    <HBox fx:id="splitContainer" visible="false" managed="false" prefHeight="250" prefWidth="250">
+        <VBox fx:id="leftPane" HBox.hgrow="ALWAYS"/>
+
+        <VBox fx:id="rightPane" HBox.hgrow="ALWAYS">
+            <HBox alignment="TOP_RIGHT" style="-fx-padding: 0;">
+                <Button fx:id="closeButton" text="✕" onAction="#closeModal"
+                        styleClass="big-close-button">
+                    <HBox.margin>
+                        <Insets top="-20" right="-10"/>
+                    </HBox.margin>
+                </Button>
+            </HBox>
+
+            <TableView fx:id="decryptedTable" prefHeight="400">
+                <columns>
+                    <TableColumn fx:id="encryptedCol" text="Crypted Word" prefWidth="150"/>
+                    <TableColumn fx:id="decryptedCol" text="Decrypted word" prefWidth="150"/>
+                    <TableColumn fx:id="algorithmCol" text="Algorithm" prefWidth="100"/>
+                </columns>
+            </TableView>
+
+            <!-- Spacer pour pousser le bouton en bas -->
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <!-- Bouton Générer Rapport en bas à droite -->
+            <HBox alignment="BOTTOM_RIGHT">
+                <padding>
+                    <Insets top="10" right="15" bottom="15" left="0"/>
+                </padding>
+                <Button fx:id="generateReportButton" text="Generate rapport"
+                        styleClass="report-button"/>
+            </HBox>
+        </VBox>
+    </HBox>
+
+    <!-- Overlay de progression pour le rapport PDF - TAILLE RÉDUITE -->
+    <StackPane fx:id="pdfProgressOverlay" visible="false" managed="false" styleClass="pdf-progress-overlay">
+        <VBox alignment="CENTER" spacing="10" styleClass="pdf-progress-container">
+            <Label fx:id="pdfProgressLabel" text="Generating PDF..."
+                   style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <ProgressBar fx:id="pdfProgressBar" prefWidth="250" progress="0"/>
+            <Label fx:id="pdfStatusLabel" text="Initializing..."
+                   style="-fx-text-fill: #00ffff; -fx-font-size: 12px;"/>
+        </VBox>
+    </StackPane>
+</StackPane>

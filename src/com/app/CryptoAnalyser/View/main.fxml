@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.MenuButton?>
+
+<StackPane fx:id="mainContainer"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.app.CryptoAnalyser.controller.AlgorithmeController"
+           style="-fx-padding: 0;">
+
+    <VBox spacing="0" stylesheets="@/css/style.css" style="-fx-padding: 0;" StackPane.alignment="TOP_CENTER">
+
+        <!-- TOP BAR -->
+        <HBox styleClass="top-bar-glass"
+              alignment="CENTER"
+              spacing="15"
+              prefHeight="70"
+              maxHeight="70"
+              minHeight="66"
+              style="-fx-padding: 0;"
+              VBox.vgrow="NEVER">
+            <Label text="CRYPTOANALYZER" styleClass="app-logo"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <HBox styleClass="search-container" alignment="CENTER_LEFT" spacing="8">
+                <Label fx:id="searchIconLabel" styleClass="search-icon"/>
+                <TextField fx:id="searchField"
+                           promptText="Search algorithm..."
+                           styleClass="search-field-glass"
+                           maxWidth="240"/>
+            </HBox>
+            <Region HBox.hgrow="ALWAYS"/>
+            <MenuButton text="☰" styleClass="menu-btn-glass">
+                <items>
+                    <MenuItem text="Statistics" onAction="#showStatistics"/>
+                    <MenuItem text="About Us" onAction="#showAboutUs"/>
+                </items>
+            </MenuButton>
+        </HBox>
+
+        <!-- SCROLLABLE CONTENT -->
+        <ScrollPane fx:id="mainScrollPane"
+                    fitToWidth="true"
+                    fitToHeight="false"
+                    hbarPolicy="NEVER"
+                    vbarPolicy="AS_NEEDED"
+                    style="-fx-background-color: transparent;"
+                    VBox.vgrow="ALWAYS">
+
+            <content>
+                <VBox spacing="10" alignment="TOP_CENTER">
+
+                    <!-- SECTION PRINCIPALE -->
+                    <!-- Spacing 40 pour aérer -->
+                    <HBox spacing="40" alignment="CENTER" style="-fx-padding: 10 20 0 20;">
+
+                        <!-- PARTIE GAUCHE - ZONE DE SAISIE (TAILLE RÉDUITE) -->
+                        <!-- prefWidth réduit à 310 -->
+                        <VBox styleClass="input-section-glass" spacing="10"
+                              prefWidth="310" maxWidth="360" maxHeight="400"
+                              HBox.hgrow="ALWAYS"
+                              style="-fx-padding: 20;">
+
+                            <Label text="CIPHER INPUT &amp; ANALYSIS" styleClass="section-title"/>
+
+                            <HBox spacing="8" alignment="TOP_LEFT">
+                                <StackPane HBox.hgrow="ALWAYS">
+                                    <TextArea fx:id="cipherInputField"
+                                              promptText="Enter cipher text here..."
+                                              styleClass="cipher-textarea"
+                                              wrapText="true"
+                                              prefRowCount="6"/>
+                                    <Button fx:id="importButton" text="📂" styleClass="import-icon-btn-inside"
+                                            StackPane.alignment="BOTTOM_RIGHT"/>
+                                </StackPane>
+                            </HBox>
+
+                            <HBox alignment="CENTER_RIGHT" style="-fx-padding: 0;">
+                                <Button fx:id="decryptButton" text="Decrypt" styleClass="decrypt-btn-glass-smaller"
+                                        onAction="#decryptButtonClicked"/>
+                            </HBox>
+
+                            <GridPane fx:id="algOptionsContainer" hgap="8" vgap="8" alignment="CENTER">
+                                <columnConstraints>
+                                    <ColumnConstraints percentWidth="33.3"/>
+                                    <ColumnConstraints percentWidth="33.3"/>
+                                    <ColumnConstraints percentWidth="33.3"/>
+                                </columnConstraints>
+
+                                <HBox spacing="4" alignment="CENTER_LEFT" styleClass="algo-item-bg" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                    <Label text="César" styleClass="toggle-label"/>
+                                    <ToggleButton styleClass="circular-toggle-outer"><graphic><Region styleClass="circular-toggle-inner"/></graphic></ToggleButton>
+                                </HBox>
+                                <HBox spacing="4" alignment="CENTER_LEFT" styleClass="algo-item-bg" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                    <Label text="Vigenère" styleClass="toggle-label"/>
+                                    <ToggleButton styleClass="circular-toggle-outer"><graphic><Region styleClass="circular-toggle-inner"/></graphic></ToggleButton>
+                                </HBox>
+                                <HBox spacing="4" alignment="CENTER_LEFT" styleClass="algo-item-bg" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                    <Label text="Transpo." styleClass="toggle-label"/>
+                                    <ToggleButton styleClass="circular-toggle-outer"><graphic><Region styleClass="circular-toggle-inner"/></graphic></ToggleButton>
+                                </HBox>
+
+                                <HBox spacing="4" alignment="CENTER_LEFT" styleClass="algo-item-bg" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                    <Label text="AES" styleClass="toggle-label"/>
+                                    <ToggleButton styleClass="circular-toggle-outer"><graphic><Region styleClass="circular-toggle-inner"/></graphic></ToggleButton>
+                                </HBox>
+                                <HBox spacing="4" alignment="CENTER_LEFT" styleClass="algo-item-bg" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <Label text="RSA" styleClass="toggle-label"/>
+                                    <ToggleButton styleClass="circular-toggle-outer"><graphic><Region styleClass="circular-toggle-inner"/></graphic></ToggleButton>
+                                </HBox>
+                                <HBox spacing="4" alignment="CENTER_LEFT" styleClass="algo-item-bg" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <Label text="SHA-256" styleClass="toggle-label"/>
+                                    <ToggleButton styleClass="circular-toggle-outer"><graphic><Region styleClass="circular-toggle-inner"/></graphic></ToggleButton>
+                                </HBox>
+
+                                <HBox spacing="4" alignment="CENTER_LEFT" styleClass="algo-item-bg" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                    <Label text="Hill" styleClass="toggle-label"/>
+                                    <ToggleButton styleClass="circular-toggle-outer"><graphic><Region styleClass="circular-toggle-inner"/></graphic></ToggleButton>
+                                </HBox>
+                                <HBox spacing="4" alignment="CENTER_LEFT" styleClass="algo-item-bg" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <Label text="ROT13" styleClass="toggle-label"/>
+                                    <ToggleButton styleClass="circular-toggle-outer" selected="true"><graphic><Region styleClass="circular-toggle-inner"/></graphic></ToggleButton>
+                                </HBox>
+                            </GridPane>
+                        </VBox>
+
+                        <!-- PARTIE DROITE - CHATBOT -->
+                        <StackPane HBox.hgrow="ALWAYS" style="-fx-padding: 0;">
+
+                            <!-- Image de fond (Taille réduite à 440) -->
+                            <ImageView preserveRatio="true" fitHeight="440" StackPane.alignment="CENTER" style="-fx-opacity: 0.95;">
+                                <Image url="@/images/IA.png"/>
+                            </ImageView>
+
+                            <!-- Conteneur VBox centré -->
+                            <!-- La taille du VBox est calculée pour être PLUS PETITE que l'image -->
+                            <VBox alignment="TOP_CENTER" spacing="10" StackPane.alignment="CENTER">
+                                <Label text="AI ASSISTANT CHATBOT" styleClass="chatbot-title" alignment="CENTER"/>
+
+                                <!-- HBox pour le chat -->
+                                <HBox alignment="CENTER" spacing="0">
+                                    <!-- prefWidth=350 (plus petit que l'image pour rester "dedans") -->
+                                    <VBox styleClass="chatbox-on-image" spacing="0" prefWidth="350" prefHeight="400" style="-fx-background-color: transparent;">
+                                        <ScrollPane fx:id="chatScrollPane" styleClass="chat-scroll-on-image" fitToWidth="true" fitToHeight="true"
+                                                    hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" style="-fx-background-color: transparent; -fx-border-color: transparent;" VBox.vgrow="ALWAYS">
+                                            <content>
+                                                <VBox fx:id="chatMessagesContainer" spacing="6" styleClass="messages-on-image-container" style="-fx-background-color: transparent;">
+                                                    <Label text="Hello 👋, how can I help you decrypt a message today?" styleClass="message-on-image"/>
+                                                </VBox>
+                                            </content>
+                                        </ScrollPane>
+                                        <HBox styleClass="input-on-image-container" spacing="8" alignment="CENTER" prefHeight="60" style="-fx-background-color: transparent;">
+                                            <TextField fx:id="chatInputField" promptText="Type your message..." styleClass="input-on-image-field" HBox.hgrow="ALWAYS"/>
+                                            <Label fx:id="flashLabel" text="➤" styleClass="flash-icon"/>
+                                        </HBox>
+                                    </VBox>
+                                </HBox>
+                            </VBox>
+                        </StackPane>
+                    </HBox>
+
+                    <Region VBox.vgrow="ALWAYS"/>
+
+                    <!-- SECTION ALGORITHMES DISPONIBLES (INCHANGÉE) -->
+                    <VBox alignment="CENTER" spacing="0" style="-fx-padding: 0;">
+                        <Label fx:id="algTitle" text="AVAILABLE ALGORITHMS" alignment="CENTER" styleClass="alg-title" style="-fx-padding: 0 0 5 0;"/>
+                        <HBox alignment="CENTER" spacing="20" style="-fx-padding: 0; -fx-min-height: 120;">
+                            <Button fx:id="prevButton" text="◀" styleClass="nav-button"/>
+                            <ScrollPane fx:id="scrollPane" fitToHeight="true" hbarPolicy="NEVER" vbarPolicy="NEVER" style="-fx-background-color: transparent; -fx-padding: 0;" prefHeight="120" minHeight="120">
+                                <content>
+                                    <HBox fx:id="cardContainer" spacing="15" alignment="CENTER_LEFT" style="-fx-padding: 10 15 10 15; -fx-min-height: 100;">
+                                        <VBox styleClass="card" spacing="5" alignment="CENTER" prefWidth="180" prefHeight="100" minHeight="100">
+                                            <Label text="🔒" styleClass="card-icon"/>
+                                            <Label text="Casser Cipher" styleClass="card-title"/>
+                                            <Label text="Substitution cipher decoder" styleClass="card-description" wrapText="true"/>
+                                        </VBox>
+                                        <VBox styleClass="card" spacing="5" alignment="CENTER" prefWidth="180" prefHeight="100" minHeight="100">
+                                            <Label text="📜" styleClass="card-icon"/>
+                                            <Label text="Vigembre" styleClass="card-title"/>
+                                            <Label text="Polyalphabetic cipher" styleClass="card-description" wrapText="true"/>
+                                        </VBox>
+                                        <VBox styleClass="card" spacing="5" alignment="CENTER" prefWidth="180" prefHeight="100" minHeight="100">
+                                            <Label text="🔄" styleClass="card-icon"/>
+                                            <Label text="ROT13" styleClass="card-title"/>
+                                            <Label text="Simple rotation cipher" styleClass="card-description" wrapText="true"/>
+                                        </VBox>
+                                    </HBox>
+                                </content>
+                            </ScrollPane>
+                            <Button fx:id="nextButton" text="▶" styleClass="nav-button"/>
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </VBox>
+</StackPane>

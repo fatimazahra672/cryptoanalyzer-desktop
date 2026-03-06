@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.layout.ColumnConstraints?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.app.CryptoAnalyser.controller.AboutUsController"
+           stylesheets="@/css/styleAbout.css"
+           styleClass="root">
+
+    <VBox spacing="0" alignment="TOP_CENTER">
+
+        <!-- === TOP BAR === -->
+        <HBox styleClass="top-bar-glass"
+              alignment="CENTER_LEFT"
+              spacing="15"
+              prefHeight="70"
+              maxHeight="70"
+              minHeight="66"
+              style="-fx-padding: 0 20 0 20;">
+
+            <Button text="&lt;- Home" styleClass="back-btn-glass" onAction="#goBack"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="ABOUT US" styleClass="app-logo"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Region prefWidth="80" />
+        </HBox>
+
+        <!-- === CONTENT === -->
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED"
+                    styleClass="scroll-pane" VBox.vgrow="ALWAYS">
+
+            <VBox spacing="25" alignment="TOP_CENTER" style="-fx-padding: 25 20 25 20;">
+
+                <!-- HERO -->
+                <VBox alignment="CENTER" spacing="8" style="-fx-max-width: 800;">
+                    <Label text="CryptoAnalyser" styleClass="hero-title"/>
+                    <Label text="Deciphering the future, securing the present." styleClass="hero-subtitle"/>
+                </VBox>
+
+                <!-- MISSION &amp; APP DESCRIPTION -->
+                <GridPane hgap="20" vgap="20" alignment="TOP_CENTER" style="-fx-max-width: 1200;">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+
+                    <!-- MISSION -->
+                    <VBox styleClass="glass-card" spacing="12" GridPane.columnIndex="0">
+                        <Label text="OUR MISSION" styleClass="section-title"/>
+                        <TextFlow style="-fx-text-alignment: JUSTIFY;">
+                            <Text styleClass="text-content" text="CryptoAnalyser is an innovative platform dedicated to cryptographic analysis and the decryption of complex algorithms. "/>
+                            <Text styleClass="text-content" text="Designed to simplify the understanding of encryption mechanisms with an intuitive interface."/>
+                        </TextFlow>
+                    </VBox>
+
+                    <!-- APP DESCRIPTION -->
+                    <VBox styleClass="glass-card" spacing="12" GridPane.columnIndex="1">
+                        <Label text="ABOUT THE APP" styleClass="section-title"/>
+                        <TextFlow style="-fx-text-alignment: JUSTIFY;">
+                            <Text styleClass="text-content" text="This application allows automatic detection and decryption of encrypted texts, combining classical cryptographic methods and AI techniques."/>
+                        </TextFlow>
+                        <VBox spacing="10" style="-fx-padding: 10 0 0 0;">
+                            <Label text="Supported Algorithms:" style="-fx-text-fill: #00e5ff; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+                            <FlowPane hgap="8" vgap="8" alignment="CENTER_LEFT">
+                                <Label text="Base64" styleClass="tech-badge"/>
+                                <Label text="Caesar Cipher" styleClass="tech-badge"/>
+                                <Label text="Hex" styleClass="tech-badge"/>
+                            </FlowPane>
+                        </VBox>
+                    </VBox>
+                </GridPane>
+
+                <!-- KEY FEATURES -->
+                <VBox spacing="15" alignment="CENTER" style="-fx-max-width: 1200;">
+                    <Label text="KEY FEATURES" styleClass="section-title-center"/>
+
+                    <GridPane hgap="15" vgap="15" alignment="TOP_CENTER">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="33"/>
+                            <ColumnConstraints percentWidth="33"/>
+                            <ColumnConstraints percentWidth="33"/>
+                        </columnConstraints>
+
+                        <!-- Feature Cards -->
+                        <VBox styleClass="feature-card" alignment="TOP_CENTER" spacing="8" GridPane.columnIndex="0">
+                            <Label text="🤖" styleClass="icon-emoji"/>
+                            <Label text="AI Chatbot" styleClass="feature-title"/>
+                            <Text styleClass="feature-text" text="Intelligent assistant for decryption guidance and explanations."/>
+                        </VBox>
+
+                        <VBox styleClass="feature-card" alignment="TOP_CENTER" spacing="8" GridPane.columnIndex="1">
+                            <Label text="📊" styleClass="icon-emoji"/>
+                            <Label text="Statistics" styleClass="feature-title"/>
+                            <Text styleClass="feature-text" text="Track decryption history, success rates, and performance analytics."/>
+                        </VBox>
+
+                        <VBox styleClass="feature-card" alignment="TOP_CENTER" spacing="8" GridPane.columnIndex="2">
+                            <Label text="📄" styleClass="icon-emoji"/>
+                            <Label text="Auto Reports" styleClass="feature-title"/>
+                            <Text styleClass="feature-text" text="Generate detailed reports for each decryption operation."/>
+                        </VBox>
+
+                        <VBox styleClass="feature-card" alignment="TOP_CENTER" spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                            <Label text="⚡" styleClass="icon-emoji"/>
+                            <Label text="Quick Analysis" styleClass="feature-title"/>
+                            <Text styleClass="feature-text" text="Real-time analysis with instant algorithm detection."/>
+                        </VBox>
+
+                        <VBox styleClass="feature-card" alignment="TOP_CENTER" spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <Label text="🛡️" styleClass="icon-emoji"/>
+                            <Label text="Multi-Algorithm" styleClass="feature-title"/>
+                            <Text styleClass="feature-text" text="Support for Base64, Caesar Cipher, Hex and more."/>
+                        </VBox>
+
+                        <VBox styleClass="feature-card" alignment="TOP_CENTER" spacing="8" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <Label text="🎯" styleClass="icon-emoji"/>
+                            <Label text="Pattern Detection" styleClass="feature-title"/>
+                            <Text styleClass="feature-text" text="Advanced pattern recognition for encryption methods."/>
+                        </VBox>
+                    </GridPane>
+                </VBox>
+
+                <!-- WORKFLOW -->
+                <VBox styleClass="glass-card" spacing="20" alignment="CENTER" style="-fx-max-width: 900;">
+                    <Label text="HOW IT WORKS" styleClass="section-title-center"/>
+
+                    <HBox spacing="20" alignment="CENTER">
+                        <!-- Step 1 -->
+                        <VBox alignment="CENTER" spacing="8" styleClass="workflow-step">
+                            <StackPane>
+                                <Circle radius="22" style="-fx-fill: #00e5ff20; -fx-stroke: #00e5ff; -fx-stroke-width: 2;"/>
+                                <Label text="1" styleClass="workflow-number"/>
+                            </StackPane>
+                            <Label text="Input Text" styleClass="step-label"/>
+                            <Text styleClass="step-desc" text="Encrypted text input"/>
+                        </VBox>
+
+                        <Label text="→" styleClass="workflow-arrow"/>
+
+                        <!-- Step 2 -->
+                        <VBox alignment="CENTER" spacing="8" styleClass="workflow-step">
+                            <StackPane>
+                                <Circle radius="22" style="-fx-fill: #00e5ff20; -fx-stroke: #00e5ff; -fx-stroke-width: 2;"/>
+                                <Label text="2" styleClass="workflow-number"/>
+                            </StackPane>
+                            <Label text="Analysis" styleClass="step-label"/>
+                            <Text styleClass="step-desc" text="Pattern detection"/>
+                        </VBox>
+
+                        <Label text="→" styleClass="workflow-arrow"/>
+
+                        <!-- Step 3 -->
+                        <VBox alignment="CENTER" spacing="8" styleClass="workflow-step">
+                            <StackPane>
+                                <Circle radius="22" style="-fx-fill: #00e5ff20; -fx-stroke: #00e5ff; -fx-stroke-width: 2;"/>
+                                <Label text="3" styleClass="workflow-number"/>
+                            </StackPane>
+                            <Label text="Decryption" styleClass="step-label"/>
+                            <Text styleClass="step-desc" text="Apply algorithm"/>
+                        </VBox>
+
+                        <Label text="→" styleClass="workflow-arrow"/>
+
+                        <!-- Step 4 -->
+                        <VBox alignment="CENTER" spacing="8" styleClass="workflow-step">
+                            <StackPane>
+                                <Circle radius="22" style="-fx-fill: #00e5ff20; -fx-stroke: #00e5ff; -fx-stroke-width: 2;"/>
+                                <Label text="4" styleClass="workflow-number"/>
+                            </StackPane>
+                            <Label text="Results &amp; Report" styleClass="step-label"/>
+                            <Text styleClass="step-desc" text="Detailed analysis"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <!-- TEAM -->
+                <VBox spacing="20" alignment="CENTER" style="-fx-max-width: 1200;">
+                    <Label text="OUR TEAM" styleClass="section-title-center"/>
+
+                    <HBox spacing="20" alignment="CENTER">
+                        <!-- Member 1 -->
+                        <VBox styleClass="team-card" alignment="TOP_CENTER" spacing="10" prefWidth="250">
+                            <StackPane>
+                                <Circle radius="40" styleClass="avatar-circle"/>
+                                <Label text="FE" styleClass="avatar-initials"/>
+                            </StackPane>
+                            <VBox alignment="CENTER" spacing="3">
+                                <Label text="Fatima Zohra" styleClass="member-name"/>
+                                <Label text="El Hamdani" styleClass="member-name"/>
+                            </VBox>
+                            <Label text="Computer Engineering" styleClass="member-role"/>
+                            <Hyperlink text="LinkedIn"
+                                       styleClass="linkedin-link"
+                                       onAction="#openLinkedIn"
+                                       userData="https://www.linkedin.com/in/fatima-zohra-el-hamdani"/>
+                        </VBox>
+
+                        <!-- Member 2 -->
+                        <VBox styleClass="team-card" alignment="TOP_CENTER" spacing="10" prefWidth="250">
+                            <StackPane>
+                                <Circle radius="40" styleClass="avatar-circle"/>
+                                <Label text="HC" styleClass="avatar-initials"/>
+                            </StackPane>
+                            <VBox alignment="CENTER" spacing="3">
+                                <Label text="Hiba" styleClass="member-name"/>
+                                <Label text="Chtioui" styleClass="member-name"/>
+                            </VBox>
+                            <Label text="Computer Engineering" styleClass="member-role"/>
+                            <Hyperlink text="LinkedIn"
+                                       styleClass="linkedin-link"
+                                       onAction="#openLinkedIn"
+                                       userData="https://www.linkedin.com/in/hiba-chtioui"/>
+                        </VBox>
+
+                        <!-- Member 3 -->
+                        <VBox styleClass="team-card" alignment="TOP_CENTER" spacing="10" prefWidth="250">
+                            <StackPane>
+                                <Circle radius="40" styleClass="avatar-circle"/>
+                                <Label text="FE" styleClass="avatar-initials"/>
+                            </StackPane>
+                            <VBox alignment="CENTER" spacing="3">
+                                <Label text="Fatima Zohra" styleClass="member-name"/>
+                                <Label text="El Boukhari" styleClass="member-name"/>
+                            </VBox>
+                            <Label text="Computer Engineering" styleClass="member-role"/>
+                            <Hyperlink text="LinkedIn"
+                                       styleClass="linkedin-link"
+                                       onAction="#openLinkedIn"
+                                       userData="https://www.linkedin.com/in/fatima-zohra-el-boukhari"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <!-- TECHNOLOGIES -->
+                <VBox spacing="15" alignment="CENTER" style="-fx-max-width: 800;">
+                    <Label text="TECHNOLOGIES USED" styleClass="section-title-center"/>
+                    <FlowPane hgap="12" vgap="12" alignment="CENTER">
+                        <Label text="Java SE" styleClass="tech-badge"/>
+                        <Label text="JavaFX" styleClass="tech-badge"/>
+                        <Label text="CSS3" styleClass="tech-badge"/>
+                        <Label text="Cryptography" styleClass="tech-badge"/>
+                        <Label text="MVC Pattern" styleClass="tech-badge"/>
+                        <Label text="Maven" styleClass="tech-badge"/>
+                        <Label text="AI/ML" styleClass="tech-badge"/>
+                    </FlowPane>
+                </VBox>
+
+                <!-- FOOTER -->
+                <VBox spacing="5" alignment="CENTER" style="-fx-padding: 20 0 10 0;">
+                    <Label text="© 2025 CryptoAnalyser Project - National School of Applied Sciences" styleClass="footer-text"/>
+                    <Label text="Version 1.0.0" styleClass="footer-subtext"/>
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+    </VBox>
+</StackPane>

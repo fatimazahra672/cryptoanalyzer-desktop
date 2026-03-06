@@ -1,0 +1,948 @@
+.root {
+    -fx-background-color: linear-gradient(to bottom, #071422, #0A1A2F, #03101C);
+    -fx-padding: 20;
+}
+
+.main-content-container {
+    -fx-spacing: 20;
+    -fx-alignment: TOP_LEFT;
+}
+
+/* ===== SECTIONS GLASSMORPHISM ===== */
+.input-section-glass {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 15;
+    -fx-padding: 25;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0.4, 0, 3);
+    -fx-pref-width: 700px;
+    -fx-max-width: 700px;
+    -fx-min-width: 700px;
+    -fx-alignment: TOP_LEFT;
+    -fx-border-style: solid;
+    -fx-border-width: 1;
+    -fx-border-radius: 15;
+    -fx-border-color: rgba(0, 255, 255, 0.2);
+}
+
+.chatbox-on-image {
+    -fx-background-color: linear-gradient(to bottom, #071422 0%, #0A1A2F 60%, #03101C 100%);
+    -fx-background-radius: 15;
+    -fx-padding: 15;
+    -fx-border-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.3), 10, 0.2, 0, 0);
+    -fx-border-color: rgba(0, 230, 255, 0.2);
+    -fx-border-width: 1;
+    -fx-pref-width: 540;
+    -fx-pref-height: 500;
+}
+
+/* ===== TOP BAR & NAVIGATION ===== */
+.top-bar-glass {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-padding: 12 25 12 25;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.15);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 12, 0.2, 0, 2);
+}
+
+.app-logo {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(to right, #ffffff 0%, #9beaff 50%, #4cd3ff 100%);
+    -fx-effect: dropshadow(gaussian, rgba(0, 180, 255, 0.45), 12, 0.15, 0, 0);
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+
+/*teste de css  **************/
+
+/* SUPPRIMER LE FOND BLANC DU MENUBUTTON QUAND IL EST OUVERT */
+.menu-btn-glass {
+    -fx-background-color: transparent;
+    -fx-font-size: 22px;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 0;
+}
+
+
+.menu-btn-glass:hover {
+    -fx-text-fill: #7ec8ff;
+    -fx-background-color: transparent;
+}
+
+/* SUPPRIMER LA FLÈCHE */
+.menu-btn-glass .arrow-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-shape: "";
+    -fx-opacity: 0;
+}
+
+/* Le label interne */
+.menu-btn-glass .label {
+    -fx-font-size: 22px;
+    -fx-font-family: "Segoe UI";
+    -fx-text-fill: inherit;
+    -fx-background-color: transparent;
+}
+
+/* STYLE DU CONTEXT MENU (LE MENU DÉROULANT) */
+.menu-btn-glass .context-menu {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 6px 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 12, 0, 0, 4);
+    -fx-background-insets: 0;
+}
+
+/* STYLE MODERNE ET ÉLÉGANT POUR LES ITEMS DU MENU */
+.menu-btn-glass .menu-item {
+    -fx-background-color: transparent;
+    -fx-padding: 12px 25px;
+    -fx-cursor: hand;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-margin: 2px 5px;
+    -fx-min-width: 200px;
+    -fx-transition: all 0.2s ease;
+}
+
+/* STYLE DU LABEL */
+.menu-btn-glass .menu-item .label {
+    -fx-text-fill: rgba(255, 255, 255, 0.95);
+    -fx-font-size: 16px;
+    -fx-font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+    -fx-font-weight: 500;
+    -fx-letter-spacing: 0.3px;
+}
+
+/* EFFET HOVER - ANIMÉ */
+.menu-btn-glass .menu-item:hover {
+    -fx-background-color: linear-gradient(to right,
+        rgba(126, 200, 255, 0.15) 0%,
+        rgba(126, 200, 255, 0.08) 100%);
+    -fx-background-radius: 6px;
+    -fx-border-color: rgba(126, 200, 255, 0.3);
+    -fx-border-width: 0.5px;
+    -fx-border-radius: 6px;
+    -fx-effect: dropshadow(gaussian, rgba(126, 200, 255, 0.3), 8, 0, 0, 1);
+    -fx-translate-x: 3px;
+    -fx-padding: 12px 25px;
+}
+
+/* COULEUR DU TEXTE EN HOVER */
+.menu-btn-glass .menu-item:hover .label {
+    -fx-text-fill: #7ec8ff;
+    -fx-font-weight: 600;
+    -fx-effect: dropshadow(gaussian, rgba(126, 200, 255, 0.5), 10, 0.3, 0, 0);
+}
+
+/* EFFET QUAND L'ITEM EST PRESSÉ */
+.menu-btn-glass .menu-item:pressed {
+    -fx-background-color: linear-gradient(to right,
+        rgba(126, 200, 255, 0.25) 0%,
+        rgba(126, 200, 255, 0.15) 100%);
+    -fx-translate-x: 1px;
+    -fx-translate-y: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(126, 200, 255, 0.2), 4, 0, 0, 0);
+}
+
+/* STYLE POUR LA PREMIÈRE OPTION (STATISTIQUES) */
+.menu-btn-glass .menu-item:first {
+    -fx-border-radius: 6px 6px 0 0;
+}
+
+/* STYLE POUR LA DERNIÈRE OPTION */
+.menu-btn-glass .menu-item:last {
+    -fx-border-radius: 0 0 6px 6px;
+}
+
+/* VERSION AVEC ICÔNES (si vous en ajoutez) */
+.menu-btn-glass .menu-item .graphic-container {
+    -fx-padding: 0 8px 0 0;
+}
+
+.menu-btn-glass .menu-item .graphic {
+    -fx-font-size: 14px;
+    -fx-text-fill: rgba(126, 200, 255, 0.7);
+}
+
+.menu-btn-glass .menu-item:hover .graphic {
+    -fx-text-fill: #7ec8ff;
+    -fx-effect: dropshadow(gaussian, rgba(126, 200, 255, 0.7), 8, 0.5, 0, 0);
+}
+/* ===== SEARCH BAR ===== */
+.search-container {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.15);
+    -fx-border-width: 1;
+    -fx-padding: 6 18 6 18;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 8, 0.3, 0, 1);
+}
+
+.search-container:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+}
+
+.search-icon {
+    -fx-text-fill: rgba(255, 255, 255, 0.7);
+    -fx-font-size: 16px;
+    -fx-padding: 0 0 0 5;
+    -fx-cursor: hand;
+}
+
+.search-icon:hover {
+    -fx-text-fill: white;
+}
+
+.search-field-glass {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.5);
+    -fx-border-width: 0;
+    -fx-padding: 0 0 0 8;
+}
+
+.no-results-message {
+    -fx-text-fill: rgba(255, 255, 255, 0.7);
+    -fx-font-size: 16px;
+    -fx-font-style: italic;
+}
+
+/* ===== TITLES ===== */
+.section-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.5), 15, 0.4, 0, 0);
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-padding: 0 0 18 0;
+}
+
+.alg-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.5), 15, 0.4, 0, 0);
+    -fx-font-family: "Segoe UI Semibold";
+    /* RÉDUIRE LE PADDING - anciennement 10 0 20 0 */
+    -fx-padding: 0 0 5 0;
+    /* AJOUTER POUR PLUS DE CONTRÔLE */
+    -fx-margin: 0;
+}
+
+.chatbot-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.45), 12, 0.3, 0, 0);
+    -fx-font-family: "Segoe UI Semibold";
+}
+
+.output-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00FFAA;
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 170, 0.3), 5, 0.3, 0, 1);
+}
+
+/* ===== INPUT FIELDS ===== */
+.cipher-textarea {
+    -fx-background-color: rgba(12, 28, 48, 0.9);
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(0, 255, 255, 0.35);
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.5);
+    -fx-font-size: 14px;
+    -fx-font-family: "Consolas", "Monaco", "Courier New", monospace;
+    -fx-padding: 12 45 12 18;
+    -fx-min-height: 80px;
+    -fx-pref-height: 80px;
+    -fx-max-width: Infinity;
+}
+
+.cipher-textarea .content {
+    -fx-background-color: transparent;
+}
+
+.cipher-textarea:focused {
+    -fx-border-color: rgba(0, 255, 255, 0.7);
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 255, 0.3), 12, 0.6, 0, 0);
+}
+
+.key-field {
+    -fx-background-color: rgba(12, 28, 48, 0.9);
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(0, 255, 255, 0.3);
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.5);
+    -fx-font-size: 13px;
+    -fx-font-family: "Consolas", "Monaco", "Courier New", monospace;
+    -fx-padding: 10 15;
+    -fx-pref-height: 40px;
+}
+
+.key-field:focused {
+    -fx-border-color: rgba(0, 255, 255, 0.6);
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 255, 0.25), 8, 0.5, 0, 0);
+}
+
+.input-on-image-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: #E6F9FF;
+    -fx-prompt-text-fill: rgba(230, 249, 255, 0.5);
+    -fx-font-size: 15px;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-pref-height: 40;
+}
+
+.input-on-image-field:focused {
+    -fx-text-fill: #00FFFF;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.2), 5, 0.2, 0, 0);
+}
+
+/* ===== BUTTONS ===== */
+.decrypt-btn-glass-smaller {
+    -fx-background-color: linear-gradient(to bottom, #00E5FF, #0099CC);
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(0, 255, 255, 0.6);
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-text-fill: #001122;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-min-width: 100px;
+    -fx-min-height: 35px;
+    -fx-cursor: hand;
+}
+
+.decrypt-btn-glass-smaller:hover {
+    -fx-background-color: linear-gradient(to bottom, #00FFFF, #00CCFF);
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 255, 0.5), 12, 0.7, 0, 0);
+    -fx-text-fill: #000000;
+}
+
+
+/* ===== SOLUTION URGENTE - BOUTON IMPORT ===== */
+.import-icon-btn-inside {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-text-fill: rgba(255, 255, 255, 0.7);
+    -fx-font-size: 16px;
+    -fx-min-width: 30px;
+    -fx-max-width: 30px;
+    -fx-pref-width: 30px;
+    -fx-min-height: 30px;
+    -fx-max-height: 30px;
+    -fx-pref-height: 30px;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+    -fx-padding: 0;
+    -fx-margin: 8 12 0 0;
+}
+
+.import-icon-btn-inside:hover {
+    -fx-text-fill: rgba(255, 255, 255, 1.0);
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 255, 0.5), 8, 0.5, 0, 0);
+}
+
+.import-icon-btn-inside:pressed {
+    -fx-text-fill: rgba(0, 255, 255, 0.9);
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 255, 0.7), 10, 0.7, 0, 0);
+}
+.nav-button {
+    -fx-font-size: 18px;
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(0, 255, 255, 0.3);
+    -fx-border-width: 1;
+    -fx-border-radius: 20;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.nav-button:hover {
+    -fx-background-color: rgba(0, 255, 255, 0.2);
+    -fx-border-color: rgba(0, 255, 255, 0.6);
+}
+
+.nav-button:disabled {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-border-color: rgba(255, 255, 255, 0.1);
+    -fx-text-fill: rgba(255, 255, 255, 0.3);
+}
+
+.flash-icon {
+    -fx-text-fill: #00E5FF;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 8 12 8 12;
+    -fx-background-color: rgba(0, 229, 255, 0.1);
+    -fx-background-radius: 20px;
+    -fx-border-color: rgba(0, 229, 255, 0.3);
+    -fx-border-width: 1px;
+    -fx-border-radius: 20px;
+}
+
+.flash-icon:hover {
+    -fx-background-color: rgba(0, 229, 255, 0.2);
+    -fx-text-fill: #00FFFF;
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 255, 0.4), 8, 0.3, 0, 0);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.flash-icon:pressed {
+    -fx-background-color: rgba(0, 184, 212, 0.3);
+    -fx-text-fill: #00B8D4;
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* ===== TOGGLE BUTTONS ===== */
+.toggle-label {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.circular-toggle-outer {
+    -fx-background-color: rgba(12, 28, 48, 0.9);
+    -fx-background-radius: 15;
+    -fx-border-color: rgba(0, 255, 255, 0.3);
+    -fx-border-width: 1.5;
+    -fx-border-radius: 15;
+    -fx-pref-width: 52px;
+    -fx-pref-height: 28px;
+    -fx-min-width: 52px;
+    -fx-min-height: 28px;
+    -fx-cursor: hand;
+    -fx-padding: 2;
+    -fx-alignment: center-left;
+}
+
+.circular-toggle-inner {
+    -fx-background-color: white;
+    -fx-background-radius: 100%;
+    -fx-pref-width: 20px;
+    -fx-pref-height: 20px;
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 3, 0.3, 0, 1);
+}
+
+.circular-toggle-outer.toggle-active {
+    -fx-background-color: rgba(0, 200, 255, 0.8);
+    -fx-border-color: rgba(0, 255, 255, 1);
+    -fx-border-width: 2;
+    -fx-alignment: center-right;
+    -fx-effect: dropshadow(gaussian, rgba(0, 229, 255, 0.7), 10, 0.6, 0, 0);
+}
+
+.circular-toggle-outer.toggle-active .circular-toggle-inner {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 229, 255, 0.9), 8, 0.8, 0, 1);
+}
+
+.circular-toggle-outer:hover {
+    -fx-border-color: rgba(0, 255, 255, 0.6);
+}
+
+.circular-toggle-outer:hover.toggle-active {
+    -fx-background-color: rgba(0, 220, 255, 0.9);
+    -fx-border-color: rgba(0, 255, 255, 1);
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 255, 0.8), 12, 0.8, 0, 0);
+}
+
+.algo-item-bg {
+    -fx-background-color: rgba(12, 28, 48, 0.9);
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(0, 200, 255, 0.08);
+    -fx-border-width: 1;
+    -fx-padding: 6 10 6 10;
+}
+
+/* ===== CHECKBOXES ===== */
+.option-checkbox {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-font-weight: normal;
+}
+
+.option-checkbox .box {
+    -fx-background-color: rgba(12, 28, 48, 0.95);
+    -fx-background-radius: 4;
+    -fx-border-color: rgba(0, 200, 255, 0.6);
+    -fx-border-width: 1.5;
+    -fx-border-radius: 4;
+    -fx-pref-width: 20px;
+    -fx-pref-height: 20px;
+}
+
+.option-checkbox:selected .box {
+    -fx-background-color: rgba(0, 150, 220, 0.4);
+    -fx-border-color: rgba(0, 255, 255, 0.9);
+}
+
+.option-checkbox:selected .mark {
+    -fx-background-color: #00E5FF;
+}
+
+.option-checkbox:hover .box {
+    -fx-border-color: rgba(0, 255, 255, 0.8);
+}
+
+/* ===== CARDS ===== */
+.card {
+    -fx-background-color: rgba(12, 28, 48, 0.9);
+    -fx-background-radius: 15;
+    -fx-padding: 14 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.20), 10, 0.2, 0, 0);
+    -fx-border-color: rgba(0, 255, 255, 0.25);
+    -fx-border-width: 1.2;
+    -fx-border-radius: 15;
+    -fx-cursor: hand;
+    -fx-min-width: 220px;
+    -fx-min-height: 110px;
+    -fx-max-width: 220px;
+    -fx-max-height: 110px;
+    -fx-alignment: center;
+}
+
+.card:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.60), 18, 0.3, 0, 0);
+    -fx-border-color: rgba(0, 255, 255, 0.9);
+    -fx-background-color: rgba(18, 45, 70, 0.95);
+    -fx-transition: 0.2s;
+}
+
+.card-icon {
+    -fx-font-size: 22px;
+    -fx-text-fill: #00E5FF;
+}
+
+.card-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #E6F9FF;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+}
+
+.card-description {
+    -fx-font-size: 10px;
+    -fx-text-fill: #8EC9E8;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-padding: 5 0 0 0;
+}
+
+/* ===== CHAT MESSAGES ===== */
+.messages-on-image-container {
+    -fx-padding: 40 40 20 40;
+    -fx-spacing: 12px; /* Augmentez l'espacement */
+    -fx-alignment: top-left;
+    -fx-background-color: transparent;
+}
+.message-on-image-bot {
+    -fx-background-color: transparent !important;
+    -fx-background-radius: 0;
+    -fx-padding: 12px 0; /* Plus de padding pour la lisibilité */
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-wrap-text: true;
+    -fx-max-width: 500px; /* Augmentez la largeur */
+    -fx-alignment: center-left;
+    -fx-border-color: transparent !important;
+    -fx-border-width: 0;
+    -fx-border-radius: 0;
+    -fx-effect: null;
+    -fx-line-spacing: 1.4; /* Augmentez l'interligne */
+    /* FORCEZ la taille minimale */
+    -fx-min-height: -fx-pref-height;
+    -fx-max-height: -fx-pref-height;
+}
+
+.message-on-image-user {
+    -fx-background-color: rgba(7, 20, 34, 0.9);
+    -fx-background-radius: 20px;
+    -fx-padding: 12 16;
+    -fx-text-fill: #00E5FF;
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-wrap-text: true;
+    -fx-max-width: 420;
+    -fx-alignment: center-right;
+    -fx-border-color: rgba(0, 229, 255, 0.4);
+    -fx-border-width: 1;
+    -fx-border-radius: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.15), 5, 0.2, 1, 1);
+}
+
+/* -----------------------------------------------------
+   🔵 BASE — TextArea toujours transparent
+------------------------------------------------------*/
+.text-area {
+    -fx-background-color: transparent;
+    -fx-control-inner-background: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+/* Empêche le fond par défaut gris */
+.text-area .scroll-pane,
+.text-area .scroll-pane .viewport,
+.text-area .scroll-pane .content {
+    -fx-background-color: transparent !important;
+}
+
+/* Supprime totalement les barres de défilement */
+.text-area .scroll-pane .scroll-bar:vertical,
+.text-area .scroll-pane .scroll-bar:horizontal {
+    -fx-opacity: 0;
+    -fx-pref-width: 0;
+    -fx-pref-height: 0;
+}
+
+/* -----------------------------------------------------
+   👤 MESSAGE UTILISATEUR - STYLE FIXÉ
+------------------------------------------------------*/
+.text-area.message-user .viewport {
+    -fx-background-color: #1E6DD8;
+    -fx-background-radius: 16;
+}
+/* Force la vue à avoir la couleur bleue */
+.text-area.message-user .scroll-pane .viewport {
+    -fx-background-color: #2A6BC0 !important;
+}
+
+/* Couleur du texte */
+.text-area.message-user .text {
+    -fx-fill: white !important;
+}
+
+/* -----------------------------------------------------
+   🤖 MESSAGE BOT
+------------------------------------------------------*/
+
+.text-area.message-bot .text {
+    -fx-fill: #E6F9FF !important;
+}
+/* Force le contenu à garder sa taille */
+.text-area .content {
+    -fx-pref-height: -1;
+    -fx-min-height: -fx-pref-height;
+    -fx-max-height: -fx-pref-height;
+}
+
+#chatMessagesContainer > * {
+    -fx-pref-height: -1;
+    -fx-min-height: -fx-pref-height;
+    -fx-max-height: -fx-pref-height;
+}
+/* -----------------------------------------------------
+   ❗ MESSAGE D'ERREUR
+------------------------------------------------------*/
+.text-area.message-error {
+    -fx-control-inner-background: linear-gradient(to bottom right, #ff4757, #ff3742) !important;
+    -fx-text-fill: white !important;
+    -fx-background-color: linear-gradient(to bottom right, #ff4757, #ff3742) !important;
+}
+
+.text-area.message-error .content {
+    -fx-background-color: linear-gradient(to bottom right, #ff4757, #ff3742) !important;
+    -fx-background-radius: 18px;
+    -fx-padding: 12 16;
+}
+
+.text-area.message-error .text {
+    -fx-fill: white !important;
+}
+
+
+/* ===== SCROLL PANES ===== */
+#mainScrollPane {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+#mainScrollPane .viewport {
+    -fx-background-color: transparent;
+}
+
+#mainScrollPane .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 4px;
+    -fx-padding: 0;
+}
+
+#mainScrollPane .scroll-bar:vertical .thumb {
+    -fx-background-color: #00E5FF;
+    -fx-background-insets: 0;
+    -fx-background-radius: 2px;
+}
+
+#mainScrollPane .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #00FFFF;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.8), 8, 0.3, 0, 0);
+}
+
+#scrollPane {
+    -fx-background-color: transparent;
+    -fx-padding: 0 30 20 30;
+}
+
+.chat-scroll-on-image {
+    -fx-background-color: transparent;
+    -fx-padding: 20;
+    -fx-background-radius: 15 15 0 0;
+    -fx-pref-height: 400;
+}
+
+/*partie ajouter  */
+.message-on-image-bot .text {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 0.5, 0.5, 0, 1);
+}
+#chatMessagesContainer .label {
+    -fx-pref-height: -1;
+    -fx-min-height: -fx-pref-height;
+    -fx-max-height: -fx-pref-height;
+    -fx-wrap-text: true;
+}
+.message-on-image-user .text {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 0.5, 0.5, 0, 1);
+}
+#chatMessagesContainer > .label {
+    -fx-background-color: transparent;
+    -fx-padding: 8px 0;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-wrap-text: true;
+    -fx-max-width: 450px;
+    -fx-border-color: transparent;
+    -fx-effect: null;
+}
+
+.chat-scroll-on-image .viewport {
+    -fx-background-color: transparent;
+}
+
+.chat-scroll-on-image .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 8;
+}
+
+.chat-scroll-on-image .scroll-bar:vertical .thumb {
+    -fx-background-color: rgba(0, 230, 255, 0.3);
+    -fx-background-radius: 3;
+}
+
+/* ===== CONTAINERS ===== */
+.input-on-image-container {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+    -fx-border-color: rgba(255, 255, 255, 0.15);
+    -fx-border-width: 1px;
+    -fx-padding: 12 16;
+    -fx-spacing: 10;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.1), 10, 0.2, 0, 0);
+    -fx-pref-height: 70;
+}
+
+.input-field-container {
+    -fx-spacing: 12;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0;
+}
+
+.button-container {
+    -fx-spacing: 15;
+    -fx-alignment: CENTER_RIGHT;
+    -fx-padding: 15 0 0 0;
+}
+
+#cardContainer {
+     -fx-alignment: center;
+     -fx-spacing: 15; /* Réduit de 15 à 10 */
+     -fx-padding: 10; /* Réduit de 10 à 5 */
+ }
+
+/* ===== OUTPUT AREAS ===== */
+.output-textarea {
+    -fx-background-color: rgba(12, 48, 28, 0.8);
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(0, 255, 170, 0.3);
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-text-fill: #AAFFDD;
+    -fx-font-size: 14px;
+    -fx-padding: 12;
+    -fx-min-height: 80px;
+    -fx-pref-height: 80px;
+}
+
+/* ===== TRANSPARENT BACKGROUNDS ===== */
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+VBox, HBox, AnchorPane, Pane {
+    -fx-background-color: transparent;
+}
+
+/* ===== ALGORITHM TOGGLE BUTTONS ===== */
+.algo-toggle-btn {
+    -fx-background-color: rgba(12, 28, 48, 0.95);
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(0, 200, 255, 0.5);
+    -fx-border-width: 1.5;
+    -fx-border-radius: 8;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 13px;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-padding: 8 12 8 12;
+    -fx-cursor: hand;
+}
+
+.algo-toggle-btn:selected {
+    -fx-background-color: rgba(0, 150, 220, 0.4);
+    -fx-border-color: rgba(0, 255, 255, 0.9);
+    -fx-text-fill: #00E5FF;
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 255, 0.4), 8, 0.5, 0, 0);
+}
+
+.algo-toggle-btn:hover {
+    -fx-border-color: rgba(0, 255, 255, 0.8);
+    -fx-background-color: rgba(15, 35, 55, 0.95);
+}
+
+.algo-toggle-btn:hover:selected {
+    -fx-background-color: rgba(0, 180, 240, 0.5);
+    -fx-border-color: rgba(0, 255, 255, 1);
+}
+
+/* ===== CHAT SPECIFIC STYLES ===== */
+.chatbot-title-container {
+    -fx-padding: 40 350 0 0;
+}
+
+.message-bot .title {
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-fill: #00e5ff;
+}
+
+.message-bot .bullet-list {
+    -fx-padding: 5 0 0 15;
+}
+
+.message-user:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 123, 255, 0.6), 12, 0.4, 3, 4);
+}
+
+.message-bot:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 229, 255, 0.5), 18, 0.5, 0, 3);
+    -fx-border-color: linear-gradient(to bottom, #00ffff, #00aaff);
+}
+.message-bot:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 229, 255, 0.5), 18, 0.5, 0, 3);
+    -fx-border-color: linear-gradient(to bottom, #00ffff, #00aaff);
+}
+
+/* ===== FIX POUR LES MESSAGES QUI CHANGENT DE TAILLE ===== */
+
+/* Style FIXÉ pour tous les messages - empêcher le redimensionnement */
+.text-area.message-user,
+.text-area.message-bot,
+.text-area.message-error {
+    -fx-pref-height: -1;
+    -fx-min-height: -fx-pref-height;
+    -fx-max-height: -fx-pref-height;
+    -fx-background-color: transparent !important;
+}
+
+/* Force la taille du contenu */
+.text-area.message-user .content {
+    -fx-background-color: #2A6BC0 !important;
+    -fx-background-radius: 18px;
+    -fx-padding: 12px 16px;
+    -fx-pref-height: -1;
+    -fx-min-height: -fx-pref-height;
+    -fx-max-height: -fx-pref-height;
+}
+
+.text-area.message-bot .content {
+    -fx-background-color: rgba(15, 25, 40, 0.95) !important;
+    -fx-background-radius: 18px;
+    -fx-padding: 12px 16px;
+    -fx-border-color: rgba(0, 230, 255, 0.4);
+    -fx-border-width: 1;
+    -fx-pref-height: -1;
+    -fx-min-height: -fx-pref-height;
+    -fx-max-height: -fx-pref-height;
+}
+/* Forcer les TextArea à garder leur taille calculée initiale */
+.text-area:focused {
+    -fx-pref-height: -fx-pref-height;
+}
+
+/* Alternative: Utiliser un wrapper pour chaque message */
+.message-wrapper {
+    -fx-pref-height: -1;
+    -fx-min-height: -fx-pref-height;
+    -fx-max-height: -fx-pref-height;
+}
+
+/* Empêcher le ScrollPane parent d'affecter la taille */
+.chat-scroll-on-image .viewport {
+    -fx-pref-height: -1;
+}
+.text-area.message-bot {
+    -fx-pref-height: -1 !important;
+    -fx-min-height: -fx-pref-height !important;
+    -fx-max-height: -fx-pref-height !important;
+    -fx-background-color: transparent !important;
+    -fx-control-inner-background: rgba(15, 25, 40, 0.95) !important;
+}
+
+/* Forcer le viewport à garder sa taille */
+.text-area.message-bot .scroll-pane .viewport {
+    -fx-background-color: rgba(15, 25, 40, 0.95) !important;
+    -fx-pref-height: -1 !important;
+}
+.text-area {
+    -fx-background-color: transparent;
+    -fx-control-inner-background: transparent;
+    -fx-padding: 0;
+}

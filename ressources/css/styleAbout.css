@@ -1,0 +1,254 @@
+/* Fond général */
+.root {
+    -fx-background-color: linear-gradient(to bottom, #071422, #0A1A2F, #03101C);
+}
+
+/* === TOP BAR === */
+.top-bar-glass {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 0 0 15 15;
+    -fx-border-color: rgba(255, 255, 255, 0.1);
+    -fx-border-width: 0 0 1 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.2, 0, 2);
+}
+
+.app-logo {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(to right, #ffffff, #7ec8ff);
+    -fx-effect: dropshadow(gaussian, rgba(126, 200, 255, 0.6), 10, 0.5, 0, 0);
+}
+
+.back-btn-glass {
+    -fx-background-color: rgba(126, 200, 255, 0.1);
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-border-color: rgba(126, 200, 255, 0.3);
+    -fx-border-radius: 6;
+    -fx-font-size: 12px;
+    -fx-padding: 4 12;
+}
+.back-btn-glass:hover {
+    -fx-background-color: rgba(126, 200, 255, 0.2);
+    -fx-border-color: rgba(126, 200, 255, 0.8);
+}
+
+/* === HERO === */
+.hero-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, #00e5ff, 12, 0.4, 0, 0);
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.hero-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #a0cfff;
+    -fx-font-style: italic;
+}
+
+/* === CARTES === */
+.glass-card {
+    -fx-background-color: rgba(20, 30, 45, 0.6);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(126, 200, 255, 0.15);
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 8, 0.3, 0, 2);
+    -fx-max-width: 750;
+}
+
+.section-title {
+    -fx-text-fill: #00e5ff;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent transparent rgba(0, 229, 255, 0.3) transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 0 8 0;
+}
+
+.section-title-center {
+    -fx-text-fill: #00e5ff;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 10 0;
+}
+
+.text-content {
+    -fx-fill: #ffffff; /* Changé de #e0e0e0 à blanc pur */
+    -fx-font-size: 13px;
+    -fx-line-spacing: 3px;
+}
+
+/* === FEATURE BOXES === */
+.feature-box {
+    -fx-background-color: rgba(30, 40, 60, 0.4);
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(126, 200, 255, 0.1);
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-padding: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.2, 0, 1);
+    -fx-min-height: 120;
+}
+
+.feature-box:hover {
+    -fx-background-color: rgba(40, 50, 70, 0.6);
+    -fx-border-color: rgba(0, 229, 255, 0.3);
+    -fx-translate-y: -2px;
+}
+
+.feature-title {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+}
+
+.feature-text {
+    -fx-fill: #ffffff; /* Changé de #b0b0b0 à blanc pur */
+    -fx-font-size: 11px;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+}
+
+/* === ICÔNES ÉMOJIS === */
+.icon-emoji {
+    -fx-font-size: 32px;
+    -fx-text-fill: #7ec8ff; /* Couleur bleue claire pour les émojis */
+    -fx-effect: dropshadow(gaussian, rgba(126, 200, 255, 0.5), 5, 0.5, 0, 1);
+}
+
+/* === WORKFLOW === */
+.workflow-step {
+    -fx-alignment: CENTER;
+    -fx-spacing: 4;
+}
+
+.workflow-number {
+    -fx-text-fill: #00e5ff;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 229, 255, 0.5), 3, 0.5, 0, 1);
+}
+
+.workflow-arrow {
+    -fx-text-fill: #7ec8ff;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(126, 200, 255, 0.5), 3, 0.5, 0, 1);
+}
+
+.step-label {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+    -fx-max-width: 70;
+}
+
+.step-desc {
+    -fx-fill: #a0cfff;
+    -fx-font-size: 11px;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+    -fx-max-width: 70;
+}
+
+/* === TEAM CARDS === */
+.team-card {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(126, 200, 255, 0.1);
+    -fx-padding: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 6, 0.2, 0, 1);
+}
+
+.team-card:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-border-color: #00e5ff;
+    -fx-translate-y: -2px;
+}
+
+.avatar-circle {
+    -fx-fill: linear-gradient(to bottom right, #2a2a40, #151520);
+    -fx-stroke: #00e5ff;
+    -fx-stroke-width: 2;
+}
+
+.avatar-initials {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.member-name {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.member-role {
+    -fx-text-fill: #00e5ff;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-background-color: rgba(0, 229, 255, 0.1);
+    -fx-background-radius: 6;
+    -fx-padding: 2 6;
+}
+
+/* === LIENS LINKEDIN === */
+.linkedin-link {
+    -fx-text-fill: #00e5ff;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-underline: true;
+}
+
+.linkedin-link:hover {
+    -fx-text-fill: #7ec8ff;
+    -fx-border-color: transparent;
+}
+
+/* === TECH BADGES === */
+.tech-badge {
+    -fx-text-fill: white;
+    -fx-background-color: rgba(126, 200, 255, 0.15);
+    -fx-border-color: rgba(126, 200, 255, 0.3);
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 3 10;
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+}
+
+.tech-badge:hover {
+    -fx-background-color: rgba(0, 229, 255, 0.25);
+    -fx-border-color: #00e5ff;
+    -fx-text-fill: #00e5ff;
+}
+
+/* === FOOTER === */
+.footer-text {
+    -fx-text-fill: rgba(255,255,255,0.6); /* Plus clair */
+    -fx-font-size: 10px;
+}
+.footer-subtext {
+    -fx-text-fill: rgba(255,255,255,0.4); /* Plus clair */
+    -fx-font-size: 9px;
+}
+
+/* ScrollPane */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
